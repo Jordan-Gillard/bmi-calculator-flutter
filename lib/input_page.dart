@@ -8,7 +8,7 @@ const inactiveCardColor = Color(0xFF111328);
 const bottomBarColor = Color(0xFFEB1555);
 const bottomContainerHeight = 80.0;
 
-enum genders {
+enum genderEnum {
   male,
   female,
 }
@@ -22,8 +22,8 @@ class _InputPageState extends State<InputPage> {
   Color femaleIconColor = inactiveCardColor;
   Color maleIconColor = activeCardColor;
 
-  void updateGenderColor(gender) {
-    if (gender == genders.female) {
+  void updateGenderColor(genderEnum gender) {
+    if (gender == genderEnum.female) {
       if (femaleIconColor == activeCardColor) {
         femaleIconColor = inactiveCardColor;
       } else {
@@ -55,7 +55,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateGenderColor(genders.male);
+                        updateGenderColor(genderEnum.male);
                       });
                     },
                     child: ReusableCard(
@@ -71,7 +71,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateGenderColor(genders.female);
+                        updateGenderColor(genderEnum.female);
                       });
                     },
                     child: ReusableCard(
