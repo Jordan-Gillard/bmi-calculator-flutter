@@ -8,16 +8,15 @@ const inactiveCardColor = Color(0xFF111328);
 const bottomBarColor = Color(0xFFEB1555);
 const bottomContainerHeight = 80.0;
 
+enum Gender { male, female }
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  Color femaleIconColor = inactiveCardColor;
-  Color maleIconColor = inactiveCardColor;
-  bool femaleIconActive = false;
-  bool maleIconActive = false;
+  Gender selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +33,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        maleIconActive
-                            ? maleIconActive = false
-                            : {maleIconActive = true, femaleIconActive = false};
+                        selectedGender = Gender.male;
                       });
                     },
                     child: ReusableCard(
-                      colour:
-                          maleIconActive ? activeCardColor : inactiveCardColor,
+                      colour: selectedGender == Gender.male
+                          ? activeCardColor
+                          : inactiveCardColor,
                       childWidget: new IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -53,13 +51,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        femaleIconActive
-                            ? femaleIconActive = false
-                            : {femaleIconActive = true, maleIconActive = false};
+                        selectedGender = Gender.female;
                       });
                     },
                     child: ReusableCard(
-                      colour: femaleIconActive
+                      colour: selectedGender == Gender.female
                           ? activeCardColor
                           : inactiveCardColor,
                       childWidget: IconContent(
