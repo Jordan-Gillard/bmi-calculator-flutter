@@ -36,14 +36,12 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         maleIconActive
                             ? maleIconActive = false
-                            : maleIconActive = true;
-                        maleIconActive
-                            ? maleIconColor = inactiveCardColor
-                            : maleIconColor = activeCardColor;
+                            : {maleIconActive = true, femaleIconActive = false};
                       });
                     },
                     child: ReusableCard(
-                      colour: maleIconColor,
+                      colour:
+                          maleIconActive ? activeCardColor : inactiveCardColor,
                       childWidget: new IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -57,14 +55,13 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         femaleIconActive
                             ? femaleIconActive = false
-                            : femaleIconActive = true;
-                        femaleIconActive
-                            ? femaleIconColor = activeCardColor
-                            : femaleIconColor = inactiveCardColor;
+                            : {femaleIconActive = true, maleIconActive = false};
                       });
                     },
                     child: ReusableCard(
-                      colour: femaleIconColor,
+                      colour: femaleIconActive
+                          ? activeCardColor
+                          : inactiveCardColor,
                       childWidget: IconContent(
                         icon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
