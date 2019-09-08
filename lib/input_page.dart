@@ -72,7 +72,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Text(
                     '180',
-                    style: kBoldTextStyle,
+                    style: kNumberTextStyle,
                   )
                 ],
               ),
