@@ -18,12 +18,6 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
 
-  changeGender(Gender gender) {
-    setState(() {
-      selectedGender = gender;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +38,11 @@ class _InputPageState extends State<InputPage> {
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
-                    reusableFunction: changeGender,
-                    params: Gender.male,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
                   ),
                 ),
                 Expanded(
@@ -57,8 +54,11 @@ class _InputPageState extends State<InputPage> {
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
-                    reusableFunction: changeGender,
-                    params: Gender.female,
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
                   ),
                 ),
               ],
