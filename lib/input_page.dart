@@ -8,11 +8,6 @@ const inactiveCardColor = Color(0xFF111328);
 const bottomBarColor = Color(0xFFEB1555);
 const bottomContainerHeight = 80.0;
 
-enum genderEnum {
-  male,
-  female,
-}
-
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -20,25 +15,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Color femaleIconColor = inactiveCardColor;
-  Color maleIconColor = activeCardColor;
-
-  void updateGenderColor(genderEnum gender) {
-    if (gender == genderEnum.female) {
-      if (femaleIconColor == activeCardColor) {
-        femaleIconColor = inactiveCardColor;
-      } else {
-        femaleIconColor = activeCardColor;
-        maleIconColor = inactiveCardColor;
-      }
-    } else {
-      if (maleIconColor == activeCardColor) {
-        maleIconColor = inactiveCardColor;
-      } else {
-        maleIconColor = activeCardColor;
-        femaleIconColor = inactiveCardColor;
-      }
-    }
-  }
+  Color maleIconColor = inactiveCardColor;
+  bool femaleIconActive = false;
+  bool maleIconActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +34,12 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateGenderColor(genderEnum.male);
+                        maleIconActive
+                            ? maleIconActive = false
+                            : maleIconActive = true;
+                        maleIconActive
+                            ? maleIconColor = inactiveCardColor
+                            : maleIconColor = activeCardColor;
                       });
                     },
                     child: ReusableCard(
@@ -71,7 +55,12 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateGenderColor(genderEnum.female);
+                        femaleIconActive
+                            ? femaleIconActive = false
+                            : femaleIconActive = true;
+                        femaleIconActive
+                            ? femaleIconColor = activeCardColor
+                            : femaleIconColor = inactiveCardColor;
                       });
                     },
                     child: ReusableCard(
