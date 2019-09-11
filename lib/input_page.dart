@@ -14,6 +14,19 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
+
+  void incrementWeight() {
+    setState(() {
+      weight++;
+    });
+  }
+
+  void decrementWeight() {
+    setState(() {
+      weight--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,15 +132,21 @@ class _InputPageState extends State<InputPage> {
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          '60',
+                          weight.toString(),
                           style: kNumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            RoundIconButton(FontAwesomeIcons.minus),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: decrementWeight,
+                            ),
                             SizedBox(width: 10.0),
-                            RoundIconButton(FontAwesomeIcons.plus),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: incrementWeight,
+                            ),
                           ],
                         )
                       ],
@@ -160,13 +179,16 @@ class _InputPageState extends State<InputPage> {
 
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
+  final Function onPressed;
 
-  RoundIconButton(this.icon);
+  RoundIconButton({@required this.icon, @required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        onPressed();
+      },
       elevation: 6.0,
       child: Icon(icon),
       fillColor: kButtonBackgroundColor,
