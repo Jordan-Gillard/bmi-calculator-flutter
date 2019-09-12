@@ -15,18 +15,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
   int weight = 60;
-
-  void incrementWeight() {
-    setState(() {
-      weight++;
-    });
-  }
-
-  void decrementWeight() {
-    setState(() {
-      weight--;
-    });
-  }
+  int age = 29;
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +129,20 @@ class _InputPageState extends State<InputPage> {
                           children: <Widget>[
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
-                              onPressed: decrementWeight,
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                             ),
                             SizedBox(width: 10.0),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
-                              onPressed: incrementWeight,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                             ),
                           ],
                         )
