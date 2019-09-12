@@ -13,8 +13,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 180;
-  int weight = 60;
+  int height = 183;
+  int weight = 94;
   int age = 29;
 
   @override
@@ -199,9 +199,7 @@ class _InputPageState extends State<InputPage> {
                 Navigator.pushNamed(context, '/results');
               },
               child: Container(
-                child: Text(
-                  'CALCULATE YOUR RESULTS',
-                ),
+                child: Text('CALCULATE'),
                 color: kBottomBarColor,
                 width: double.infinity,
                 height: kBottomContainerHeight,
