@@ -194,12 +194,20 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: Container(
-              color: kBottomBarColor,
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              margin: EdgeInsets.only(
-                top: 10.0,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/results');
+              },
+              child: Container(
+                child: Text(
+                  'CALCULATE YOUR RESULTS',
+                ),
+                color: kBottomBarColor,
+                width: double.infinity,
+                height: kBottomContainerHeight,
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
               ),
             ),
           )
