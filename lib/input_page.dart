@@ -25,7 +25,7 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Expanded>[
+        children: <Widget>[
           Expanded(
             child: Row(
               children: <Expanded>[
@@ -193,19 +193,17 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/results');
-              },
-              child: Container(
-                child: Text('CALCULATE'),
-                color: kBottomBarColor,
-                width: double.infinity,
-                height: kBottomContainerHeight,
-                margin: EdgeInsets.only(
-                  top: 10.0,
-                ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/results');
+            },
+            child: Container(
+              child: Text('CALCULATE'),
+              color: kBottomBarColor,
+              width: double.infinity,
+              height: kBottomContainerHeight,
+              margin: EdgeInsets.only(
+                top: 10.0,
               ),
             ),
           )
