@@ -21,3 +21,28 @@ const kNumberTextStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
 );
+
+const kBottomBarTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 25.0,
+);
+
+const kResultScreenTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 50.0,
+);
+
+const kWeightClassificationTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 28.0,
+  color: Colors.green,
+);
+
+const kResultScreenNumberTextStyle = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.w700,
+);
+
+const kResultsExplanationTextStyle = TextStyle(
+  fontSize: 22.0,
+);
