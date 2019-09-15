@@ -32,17 +32,17 @@ const kTitleTextStyle = TextStyle(
   fontSize: 50.0,
 );
 
-const kWeightClassificationTextStyle = TextStyle(
+const kResultTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 28.0,
-  color: Colors.green,
+  fontSize: 22.0,
+  color: Color(0xFF24D876),
 );
 
-const kResultScreenNumberTextStyle = TextStyle(
+const kBMITextStyle = TextStyle(
   fontSize: 100.0,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.bold,
 );
 
-const kResultsExplanationTextStyle = TextStyle(
+const kBodyTextStyle = TextStyle(
   fontSize: 22.0,
 );

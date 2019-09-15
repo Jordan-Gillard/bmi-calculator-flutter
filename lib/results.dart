@@ -23,26 +23,26 @@ class ResultsPage extends StatelessWidget {
             child: ReusableCard(
               colour: kActiveCardColor,
               cardChild: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Expanded(
                     child: Text(
                       'Green Text',
-                      style: kWeightClassificationTextStyle,
+                      style: kResultTextStyle,
                     ),
                   ),
                   Expanded(
                     child: Text(
                       '26.7',
-                      style: kResultScreenNumberTextStyle,
+                      style: kBMITextStyle,
                     ),
                   ),
                   Expanded(
                     child: Text(
                       'You have a higher than normal blah blah blah',
                       textAlign: TextAlign.center,
-                      style: kResultsExplanationTextStyle,
+                      style: kBodyTextStyle,
                     ),
                   )
                 ],
