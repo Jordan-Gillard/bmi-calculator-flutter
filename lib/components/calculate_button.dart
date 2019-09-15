@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class CalculateButton extends StatelessWidget {
-  CalculateButton({@required this.text});
+  CalculateButton({@required this.text, @required this.onTap});
   final String text;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/results');
-      },
+      onTap: onTap,
       child: Container(
         child: Center(
           child: Text(
