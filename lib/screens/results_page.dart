@@ -4,6 +4,12 @@ import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bMIClass;
+  final String bMIExplanation;
+  final String bMIValue;
+
+  const ResultsPage({this.bMIClass, this.bMIExplanation, this.bMIValue});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,11 +18,16 @@ class ResultsPage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: Text(
-              'Your Result',
-              style: kTitleTextStyle,
+            child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Your Result',
+                style: kTitleTextStyle,
+              ),
             ),
           ),
           Expanded(
@@ -24,27 +35,21 @@ class ResultsPage extends StatelessWidget {
             child: ReusableCard(
               colour: kActiveCardColor,
               cardChild: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      'Green Text',
-                      style: kResultTextStyle,
-                    ),
+                  Text(
+                    bMIClass,
+                    style: kResultTextStyle,
                   ),
-                  Expanded(
-                    child: Text(
-                      '26.7',
-                      style: kBMITextStyle,
-                    ),
+                  Text(
+                    bMIValue,
+                    style: kBMITextStyle,
                   ),
-                  Expanded(
-                    child: Text(
-                      'You have a higher than normal blah blah blah',
-                      textAlign: TextAlign.center,
-                      style: kBodyTextStyle,
-                    ),
+                  Text(
+                    bMIExplanation,
+                    textAlign: TextAlign.center,
+                    style: kBodyTextStyle,
                   )
                 ],
               ),
