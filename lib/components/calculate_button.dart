@@ -1,7 +1,6 @@
 import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
-
 class CalculateButton extends StatelessWidget {
   CalculateButton({@required this.text, @required this.onTap});
   final String text;
