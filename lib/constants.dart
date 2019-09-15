@@ -27,7 +27,7 @@ const kBottomBarTextStyle = TextStyle(
   fontSize: 25.0,
 );
 
-const kResultScreenTextStyle = TextStyle(
+const kTitleTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 50.0,
 );
